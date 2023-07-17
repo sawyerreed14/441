@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  padding: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  text-align: center;
+  margin-bottom: 700px;
+}
+
+header, main, section {
+  margin: 0;
+  padding: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  text-align: center;
+}
+
+/* Header styles */
+h1 {
+  position: relative;
+  background-color: #E18B6B;
+  top: 50px;
+  color: white;
+  border: 3px solid #333;
+  padding: 20px;
+  font-size: 36px;
+  margin-bottom: 20px;
+  margin-top: 100px;
+}
+
+/* Section heading styles */
+h2 {
+  position: relative;
+  background-color: #E18B6B;
+  top: 150px;
+  color: white;
+  border: 3px solid #333;
+  padding: 20px;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Paragraph styles */
+p {
+  margin: 0.15em 0;
+  background-color: #E18B6B;
+  position: relative;
+  top: 150px;
+  color: white;
+  border: 3px solid #333;
+  padding: 20px;
+  font-size: 26px;
+  line-height: 1.5;
+  margin-bottom: 5px;
+  width: 75%
+}
+
+/* Media queries */
+@media screen and (max-width: 600px) {
+  /* Breakpoint 1: Mobile devices */
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  /* Breakpoint 2: Desktops and larger screens */
+  h1 {
+    font-size: 56px;
+  }
+
+  h2 {
+    font-size: 34px;
+  }
+}
