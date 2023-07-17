@@ -1,0 +1,3 @@
+# Week 3 Thoughts
+
+This week was quite the learning curve and brought on a lot more stress than anticipated. I had a hard time getting my JavaScript to work, but I was able to do some outside research to figure out why my code wasn't working. My main issue was getting the onclick event to work because I don't recall ever using this (it's been a while since I took 341) and it took some time to figure out. As for the use of var, functions, and if statements, I was underprepared and it took some time to work through. After reviewing the topics more in depth and using trial and error, I was able to get it to work in my favor and I think it went well! Other than a few hiccups, it was a pretty solid week! 
