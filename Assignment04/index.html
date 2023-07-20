@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skateboarding Adventure</title>
+    <style>
+        body {
+            background-color: cornflowerblue;
+        }
+    </style>
+    <script>
+        var score = 0;
+
+        function getChoice1() {
+            var myChoice = document.getElementById("choice").value.trim().toLowerCase();
+            var myQuestion = document.getElementById("question");
+            if (myChoice === "left") {
+                document.getElementById("choice").style.display = "none";
+                document.getElementById("btnSubmit").style.display = "none";
+
+                document.getElementById("choice2").style.display = "block";
+                document.getElementById("btnSubmit2").style.display = "block";
+
+                myQuestion.innerHTML = "You chose Left. Will you take your skateboard and explore the skate park nearby?";
+            } else if (myChoice === "right") {
+                document.getElementById("choice").style.display = "none";
+                document.getElementById("btnSubmit").style.display = "none";
+
+                document.getElementById("choice3").style.display = "block";
+                document.getElementById("btnSubmit3").style.display = "block";
+                myQuestion.innerHTML = "You chose Right. Will you head to the city to find street skate spots?";
+            } else {
+                myQuestion.innerHTML = "Invalid answer. Please enter 'Left' or 'Right'.";
+            }
+        }
+
+        function getChoice2() {
+            var answer = document.getElementById("choice2").value.trim().toLowerCase();
+            var myQuestion = document.getElementById("question");
+            if (answer === "yes") {
+                document.getElementById("mainImage").src = "skatepark.jpg";
+                myQuestion.innerHTML = "The skate park is bustling with skaters. Have a great time shredding!";
+                score += 10; // Increase the score by 10 for choosing to explore the skate park
+                setTimeout(function () {
+                    document.getElementById("mainImage").src = "ramp.jpg";
+                    myQuestion.innerHTML = "You spot a thrilling half-pipe ramp. Do you want to try some tricks?";
+                }, 3000); // Wait for 3 seconds before the next question appears
+            } else if (answer === "no") {
+                myQuestion.innerHTML = "No worries. There are many other skate spots to explore.";
+                score += 5; // Increase the score by 5 for choosing not to explore the skate park
+            }
+        }
+
+        function getChoice3() {
+            var answer = document.getElementById("choice3").value.trim().toLowerCase();
+            var myQuestion = document.getElementById("question");
+            if (answer === "yes") {
+                document.getElementById("mainImage").src = "streetskate.jpg";
+                myQuestion.innerHTML = "The city streets offer endless possibilities. Enjoy your urban skateboarding adventure!";
+                score += 15; // Increase the score by 15 for choosing to explore street skate spots
+                setTimeout(function () {
+                    document.getElementById("mainImage").src = "skateboard.jpg";
+                    myQuestion.innerHTML = "You come across a skateboarding competition. Do you want to participate?";
+                }, 3000); // Wait for 3 seconds before the next question appears
+            } else if (answer === "no") {
+                myQuestion.innerHTML = "That's alright. Sometimes the skate park is more fun.";
+                score += 5; // Increase the score by 5 for choosing not to explore street skate spots
+            }
+        }
+
+        function restartGame() {
+            score = 0;
+            document.getElementById("choice").value = "";
+            document.getElementById("choice").style.display = "block";
+            document.getElementById("btnSubmit").style.display = "block";
+            document.getElementById("choice2").style.display = "none";
+            document.getElementById("btnSubmit2").style.display = "none";
+            document.getElementById("choice3").style.display = "none";
+            document.getElementById("btnSubmit3").style.display = "none";
+            document.getElementById("question").innerHTML = "It was a sunny day, and Bob was ready for an adventure on his skateboard. He wondered which path to take.<br>He came upon a mystical skateboard that asked him which direction he wanted to go: Left or Right?<br>";
+            document.getElementById("mainImage").src = "images/skatewizard.jpg";
+        }
+
+        function calculateScore() {
+            return score;
+        }
+    </script>
+</head>
+<body>
+    <h1>Skateboarding Adventure</h1>
+    <br>
+    <img src="images/skatewizard.jpg" id="mainImage">
+    <div id="question">
+        <br>
+        It was a sunny day, and Bob was ready for an adventure on his skateboard. He wondered which path to take.
+        <br>
+        He came upon a mystical skateboard that asked him which direction he wanted to go: Left or Right?
+        <br>
+    </div>
+    <br>
+    <input type="text" size="30" id="choice" placeholder="Please enter 'Left' or 'Right'">
+    <button id="btnSubmit" onclick="getChoice1();">Click to continue</button>
+
+    <input type="text" size="30" id="choice2" placeholder="Enter 'yes' or 'no.'" style="display:none">
+    <button id="btnSubmit2" onclick="getChoice2();" style="display:none">Click to continue</button>
+
+    <input type="text" size="30" id="choice3" placeholder="Enter 'yes' or 'no.'" style="display:none">
+    <button id="btnSubmit3" onclick="getChoice3();" style="display:none">Click to continue</button>
+
+    <br>
+    <button onclick="restartGame();">Restart</button>
+
+    <br>
+    <p>Your score: <span id="scoreDisplay">0</span></p>
+
+    <script>
+        // Display the score after the game is finished
+        document.getElementById("scoreDisplay").innerText = calculateScore();
+    </script>
+</body>
+</html>
