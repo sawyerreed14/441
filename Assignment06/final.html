@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Final Page</title>
+</head>
+<body>
+  <h1>Final Page</h1>
+  <p id="userInfo"></p>
+  <p id="attemptsInfo"></p>
+
+  <script>
+    // Retrieve user information from local storage and display it on the page.
+    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+    if (userInfo) {
+      const userInfoText = `Name: ${userInfo.firstName} ${userInfo.lastName}, Age: ${userInfo.age}`;
+      const attemptsInfoText = `Number of Attempts: ${userInfo.attempts}`;
+      document.getElementById('userInfo').innerText = userInfoText;
+      document.getElementById('attemptsInfo').innerText = attemptsInfoText;
+    } else {
+      // Redirect to the main page (assuming the main page is named "index.html").
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>

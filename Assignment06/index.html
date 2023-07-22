@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blank Image Reveal</title>
+  <h1>Blank Image Reveal</h1>
+  <style>
+    img {
+      width: 100px;
+      height: 100px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="imageContainer"></div>
+
+  <script>
+    let attempts = 0;
+    let isGameCompleted = false;
+
+    function revealImage(index) {
+      const actualImages = document.getElementsByClassName('actual-image');
+      const imageOptions = actualImages[index].dataset.images.split(',');
+      const randomIndex = Math.floor(Math.random() * imageOptions.length);
+      actualImages[index].src = imageOptions[randomIndex];
+      actualImages[index].style.display = 'block';
+
+      attempts++;
+      checkGameCompletion();
+    }
+
+    function checkGameCompletion() {
+      if (!isGameCompleted) {
+        const actualImages = document.getElementsByClassName('actual-image');
+        for (let i = 0; i < actualImages.length; i++) {
+          if (actualImages[i].style.display === 'none') {
+            // If any image is still hidden, the game is not completed.
+            return;
+          }
+        }
+
+        // Game is completed. Redirect to the final page.
+        redirectToFinalPage();
+      }
+    }
+
+    function redirectToFinalPage() {
+      // Save user information and attempts in local storage.
+      const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+      userInfo.attempts = attempts;
+      localStorage.setItem('userInfo', JSON.stringify(userInfo));
+
+      // Redirect to the final page (assuming the final page is named "final.html").
+      window.location.href = 'final.html';
+      isGameCompleted = true; // Prevent multiple redirects in case of multiple calls to checkGameCompletion.
+    }
+
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    const blankImages = new Array(10);
+    const actualImages = new Array(10);
+
+    for (let i = 0; i < 10; i++) {
+      const imageOptions = [
+        'images/MandM.jpg',
+        'images/kitty.jpg',
+        'images/dawg.jpg',
+      ];
+      actualImages[i] = imageOptions.join(',');
+    }
+
+    shuffleArray(actualImages);
+
+    function displayBlankImages() {
+      const imageContainer = document.getElementById('imageContainer');
+
+      for (let i = 0; i < 10; i++) {
+        const blankImg = document.createElement('img');
+        blankImg.src =
+          'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAAeElEQVR42mJ8TYg/czmEhmxTbyOBP9cmVlMWKz8bT3/Q/Owe3JNvM9TyA7B1IcTwHvg9D9DFNVFpWkkbBvlFotfOH/7Q37TB6CCMoyyf4DlOQRojABJhyC8BnoC4gmehCsiwG6wLvAJ7APwA8gJG4D2Ab1HJtQ0awVepkwGMQDwANzCrUsvvLpYAAAAASUVORK5CYII=';
+        blankImg.alt = 'Blank Image';
+        blankImg.onclick = () => revealImage(i);
+
+        blankImages[i] = blankImg;
+
+        const actualImg = document.createElement('img');
+        actualImg.alt = 'Actual Image';
+        actualImg.className = 'actual-image';
+        actualImg.style.display = 'none';
+        actualImg.dataset.images = actualImages[i];
+
+        imageContainer.appendChild(blankImg);
+        imageContainer.appendChild(actualImg);
+      }
+    }
+
+    window.onload = displayBlankImages;
+  </script>
+</body>
+</html>
