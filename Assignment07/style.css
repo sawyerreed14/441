@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.object-container {
+    margin-bottom: 20px;
+}
+
+#object-image {
+    max-width: 100%;
+    height: auto;
+}
+
+#random-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}

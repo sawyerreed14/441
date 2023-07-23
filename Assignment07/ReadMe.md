@@ -1,0 +1,3 @@
+# Week 7 Thoughts
+
+This week was packed with quite a bit of content and new terminology that was tough to fully understand. Through hours of study I was able to get it down for the most part with a few hiccups while working on the assignment. What seems to be my main issue is naming conventions and going back to make sure I'm using the right the right names throughout my code. For example, I couldn't get my "Mountain.jpg" to display for the life of me only to find out that I named it "Mountains.jpg" on accident. It's tedious little things like that that catch me slipping but otherwise it was a good week!
