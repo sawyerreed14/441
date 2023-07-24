@@ -1,0 +1,33 @@
+#imageContainer {
+  position: relative;
+  width: 300px;
+  height: 200px;
+}
+
+.image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+#textContainer {
+  margin-top: 20px;
+}
+
+.quote {
+  display: none;
+}
+
+#shape {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50%;
+  display: none;
+}
