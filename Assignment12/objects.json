@@ -1,0 +1,44 @@
+{
+  "objects": [
+    {
+      "id": 1,
+      "name": "Object 1",
+      "x": 50,
+      "y": 100,
+      "width": 30,
+      "height": 30
+    },
+    {
+      "id": 2,
+      "name": "Object 2",
+      "x": 200,
+      "y": 50,
+      "width": 40,
+      "height": 40
+    },
+    {
+      "id": 3,
+      "name": "Object 3",
+      "x": 300,
+      "y": 200,
+      "width": 20,
+      "height": 20
+    },
+    {
+      "id": 4,
+      "name": "Object 4",
+      "x": 150,
+      "y": 250,
+      "width": 25,
+      "height": 25
+    },
+    {
+      "id": 5,
+      "name": "Object 5",
+      "x": 400,
+      "y": 300,
+      "width": 35,
+      "height": 35
+    }
+  ]
+}

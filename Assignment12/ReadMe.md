@@ -1,0 +1,3 @@
+# Week 12 Thoughts
+
+This was an extremely hard week for me and I had a hard time getting the code to work. I'm still struggling and I feel like I'm SO close to getting it to work but without any other resources than the internet I can't figure it out. After numerous hours of study and research I can't get it to function how I want it to. I've tried debugging and found where the errors were and tried to troubleshoot it but still am unable to fix it. I don't understand what I'm doing wrong and no matter how hard I try to google the problem (and the meaning behind the error messages) I cannot fix my issues. Other than my minor issues, the other 90% of my code should be good. What a rough and disappointing week, I apologize for the inconvenience. 
